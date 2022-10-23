@@ -9,11 +9,11 @@ app.use(express.urlencoded({extended:true}))
 
 const PORT = process.env.PORT || 4444
 
-app.get('/',async (req,res)=>{
+app.get('/tasks',async (req,res)=>{
     res.send(await Tasks.findAll())
 })
 
-app.post('/',async (req,res)=>{
+app.post('/tasks',async (req,res)=>{
     res.send(await Tasks.create(req.body))
 })
 
